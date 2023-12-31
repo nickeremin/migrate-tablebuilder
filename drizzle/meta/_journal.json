@@ -1,0 +1,20 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1703150870549,
+      "tag": "0000_salty_whiplash",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1703154280003,
+      "tag": "0001_fair_black_widow",
+      "breakpoints": true
+    }
+  ]
+}

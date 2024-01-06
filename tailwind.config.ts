@@ -17,6 +17,8 @@ module.exports = {
       },
       colors: {
         // System Colors
+        red: "rgb(var(--red-color))",
+        "red-accessible": "rgb(var(--red-color-accessible))",
         green: "rgb(var(--green-color))",
         "green-accessible": "rgb(var(--green-color-accessible))",
         yellow: "rgb(var(--yellow-color))",

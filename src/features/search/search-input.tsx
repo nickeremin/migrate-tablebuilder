@@ -19,6 +19,8 @@ function SearchInput({
   className,
   ...props
 }: SearchInputProps) {
+  const inputRef = React.useRef<HTMLInputElement | null>(null)
+
   return (
     <div
       className={cn(
@@ -35,6 +37,7 @@ function SearchInput({
         )}
       </div>
       <input
+        ref={inputRef}
         autoComplete="off"
         autoCorrect="off"
         autoCapitalize="off"
@@ -42,18 +45,21 @@ function SearchInput({
         type="search"
         placeholder="Поиск..."
         value={search}
-        onChange={(e) => setSearch(e.target.value)}
+        onChange={(e) => {
+          setSearch(e.target.value)
+        }}
         className="inline-flex h-full w-full bg-transparent px-3 text-base placeholder:text-muted-foreground focus-visible:outline-none"
       />
       {search.length > 0 && (
         <Button
           variant="empty"
-          type="button"
-          onMouseDown={(e) => e.preventDefault()}
+          type="reset"
+          onPointerDown={(e) => e.preventDefault()}
           onClick={() => {
             setSearch("")
+            inputRef.current?.focus()
           }}
-          className="-ml-3 inline-flex h-full shrink-0 flex-col items-center justify-center px-3 text-muted-foreground transition-colors hover:text-foreground"
+          className="-ml-3 inline-flex h-full shrink-0 flex-col items-center justify-center text-muted-foreground transition-colors hover:text-foreground"
         >
           <LucideIcon name="XCircle" />
         </Button>

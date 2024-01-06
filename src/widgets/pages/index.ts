@@ -6,6 +6,7 @@
 
 import { HomePreview } from "../layout/tables-preview"
 import OrganizationGeneralSettings from "./dashboard/settings/organization-general-settings"
+import OrganizationMembersTable from "./dashboard/settings/organization-members-table"
 import UserGeneralSettings from "./dashboard/settings/user-general-settings"
 import UserOrganizations from "./dashboard/settings/user-organizations"
 import OrganizationTables from "./dashboard/tables/organization-tables"
@@ -26,4 +27,5 @@ export {
   OrganizationGeneralSettings,
   OrganizationTables,
   UserTables,
+  OrganizationMembersTable,
 }

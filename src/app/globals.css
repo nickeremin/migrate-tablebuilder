@@ -36,8 +36,8 @@
     --green-color-accessible: 36 138 61;
     --blue-color: 0 122 255;
     --blue-color-accessible: 0 64 221;
-    --purple-color: 88 86 214;
-    --purple-color-accessible: 54 52 163;
+    --purple-color: 175 82 222;
+    --purple-color-accessible: 137 68 171;
 
     /* System Gray Colors */
     --system-gray-color-100: 142 142 147;
@@ -109,8 +109,16 @@
     --ring: 0 0% 83%;
 
     /* System Colors */
+    --red-color: 255 69 58;
+    --red-color-accessible: 255 105 97;
+    --yellow-color: 255 214 10;
+    --yellow-color-accessible: 255 212 38;
+    --green-color: 48 209 88;
+    --green-color-accessible: 48 219 91;
     --blue-color: 10 132 255;
     --blue-color-accessible: 64 156 255;
+    --purple-color: 191 90 242;
+    --purple-color-accessible: 218 143 255;
 
     /* System Gray Colors */
     --system-gray-color-100: 142 142 147;
@@ -168,6 +176,10 @@
     grid-area: 1 / 1;
   }
 
+  .input-focus-container {
+    @apply ring-0 ring-border ring-offset-1 ring-offset-border focus-within:ring-[3px] focus-within:ring-offset-muted-foreground hover:ring-offset-muted-foreground transition-all;
+  }
+
   .search-input-border {
     @apply ring-0 ring-border ring-offset-1 ring-offset-border focus-within:ring-[3px] focus-within:ring-offset-muted-foreground hover:ring-offset-muted-foreground;
   }
@@ -205,6 +217,7 @@ input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
   -webkit-appearance: none;
+  appearance: none;
 }
 
 /* Pricing */

@@ -14,7 +14,7 @@ import VerificationHeader from "./headers/verification-header"
 import DashboardNav from "./navs/dashboard-nav"
 import DesktopNavbar from "./navs/desktop-navbar"
 import MobileNavMenu from "./navs/mobile-nav-menu"
-import UserSettingsNav from "./navs/user-settings-nav"
+import { OrganizationSettingsNav, UserSettingsNav } from "./navs/settings-nav"
 import StarsBackground from "./stars-background"
 import { TrialPreveiw } from "./tables-preview"
 
@@ -24,7 +24,6 @@ export {
   HomeHeader,
   AuthHeader,
   VerificationHeader,
-  UserSettingsNav,
   DashboardHeader,
   MobileNavMenu,
   StarsBackground,
@@ -32,4 +31,6 @@ export {
   TableHeader,
   DashboardNav,
   DesktopNavbar,
+  OrganizationSettingsNav,
+  UserSettingsNav,
 }

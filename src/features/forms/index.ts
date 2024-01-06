@@ -8,6 +8,7 @@ import SignUpForm from "./auth/signup-form"
 import VerifyEmail from "./auth/verify-email"
 import ContactSalesSupportForm from "./contact/contact-sales-support-form"
 import FeedbackForm from "./contact/feedback-form"
+import AddMembersForm from "./organization/add-members-form"
 import CreateOrganizationForm from "./organization/create-organization-form"
 import DeleteAccountrForm from "./settings/delete-account-form"
 import UpdateEmailForm from "./settings/update-email-form"
@@ -27,5 +28,6 @@ export {
   VerifyEmail,
   EmailSignInForm,
   ContactSalesSupportForm,
+  AddMembersForm,
   FeedbackForm,
 }

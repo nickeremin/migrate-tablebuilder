@@ -17,7 +17,7 @@ function OrganizationSettingsLayout({
         <DashboardHeader />
         <DashboardNav />
       </div>
-      <main className="min-h-[calc(100vh-85px)]">
+      <main className="min-h-[calc(100vh-85px)] bg-background-200">
         <header className="border-b bg-background">
           <Shell className="px-6">
             <div className="flex flex-col">
@@ -31,11 +31,7 @@ function OrganizationSettingsLayout({
             </div>
           </Shell>
         </header>
-        <Shell className="px-6 lg:py-12">
-          <div className="grid grid-cols-1 lg:grid-cols-[220px_minmax(0,1fr)]">
-            {children}
-          </div>
-        </Shell>
+        <Shell className="px-6 lg:py-12">{children}</Shell>
       </main>
       <SiteFooter />
     </div>

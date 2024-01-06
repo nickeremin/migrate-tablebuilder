@@ -5,9 +5,9 @@ import { cn } from "@/shared/lib/utils"
 
 const inputVariants = cva(
   `flex w-full bg-background-100 text-sm ring-1 ring-border transition-all
-  file:border-0 file:bg-transparent file:text-sm file:font-medium 
+  file:ring-0 file:bg-transparent file:text-sm file:font-medium outline-none
   placeholder:text-muted-foreground 
-  focus-visible:outline-none focus-visible:ring-ring 
+  focus-visible:ring-ring 
   disabled:cursor-not-allowed disabled:bg-disabled`,
   {
     variants: {

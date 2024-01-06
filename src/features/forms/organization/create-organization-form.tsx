@@ -30,9 +30,9 @@ import {
   MobileModalTrigger,
 } from "@/shared/components/ui/mobile-modal"
 import { catchClerkError } from "@/shared/lib/utils"
-import { createTeamSchema } from "@/shared/lib/validations/organization"
+import { createOrganizationSchema } from "@/shared/lib/validations/organization"
 
-type Inputs = z.infer<typeof createTeamSchema>
+type Inputs = z.infer<typeof createOrganizationSchema>
 
 interface CreateOrganizationFormProps {
   children: React.ReactNode
@@ -42,7 +42,7 @@ function CreateOrganizationForm({ children }: CreateOrganizationFormProps) {
   const { createOrganization } = useOrganizationList()
 
   const form = useForm<Inputs>({
-    resolver: zodResolver(createTeamSchema),
+    resolver: zodResolver(createOrganizationSchema),
     defaultValues: {
       teamName: "",
     },

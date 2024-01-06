@@ -4,8 +4,6 @@ import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/shared/lib/utils"
 
-// focus-visible:!shadow-[0_0_0_1px_hsl(var(--border),var(--focus-ring)]
-
 const buttonVariants = cva(
   `inline-flex items-center justify-center font-medium transition-colors select-none 
   disabled:bg-muted disabled:ring-1 disabled:ring-border disabled:text-muted-foreground disabled:cursor-not-allowed
@@ -14,8 +12,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: "bg-primary text-primary-foreground hover:bg-primary/90",
-        destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+        destructive: "bg-red text-destructive-foreground hover:bg-red/90",
         outline:
           "ring-1 ring-border hover:bg-accent text-secondary-foreground hover:text-primary",
         secondary: "bg-secondary text-foreground hover:bg-secondary/80",

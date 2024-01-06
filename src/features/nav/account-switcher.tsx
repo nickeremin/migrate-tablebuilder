@@ -12,11 +12,7 @@ import {
 import { CaretSortIcon } from "@radix-ui/react-icons"
 import { CheckIcon, PlusCircleIcon } from "lucide-react"
 
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/shared/components/ui/avatar"
+import { Avatar, AvatarImage } from "@/shared/components/ui/avatar"
 import { Button } from "@/shared/components/ui/button"
 import {
   Command,
@@ -158,7 +154,7 @@ function AccountSwitcher({ expanded }: AccountSwitcherProps) {
                     </p>
                   </div>
                   <Button
-                    type="button"
+                    type="reset"
                     onPointerDown={(e) => e.preventDefault()}
                     onClick={() => setSearch("")}
                     variant="outline"
@@ -170,7 +166,10 @@ function AccountSwitcher({ expanded }: AccountSwitcherProps) {
               </CommandEmpty>
 
               {/* Account */}
-              <CommandGroup heading="Личный Аккаунт">
+              <CommandGroup
+                heading="Личный Аккаунт"
+                className="[&_[cmdk-group-heading]]:px-4"
+              >
                 <CommandItem
                   onSelect={() => {
                     setOpenDesktop(false)
@@ -183,7 +182,7 @@ function AccountSwitcher({ expanded }: AccountSwitcherProps) {
                       }
                     })
                   }}
-                  className="h-10 gap-2"
+                  className="h-11 gap-2 px-4"
                 >
                   <Avatar className="h-5 w-5">
                     <AvatarImage src={user?.imageUrl} alt="" />
@@ -200,11 +199,14 @@ function AccountSwitcher({ expanded }: AccountSwitcherProps) {
               </CommandGroup>
 
               {/* Teams */}
-              <CommandGroup heading="Команды">
+              <CommandGroup
+                heading="Команды"
+                className="[&_[cmdk-group-heading]]:px-4"
+              >
                 {userMemberships.data?.map(({ organization }) => (
                   <CommandItem
                     key={organization.id}
-                    className="h-10 gap-2"
+                    className="h-11 gap-2 px-4"
                     onSelect={() => {
                       setOpenDesktop(false)
                       startTransiton(async () => {
@@ -238,7 +240,7 @@ function AccountSwitcher({ expanded }: AccountSwitcherProps) {
               <CommandGroup>
                 <CommandItem
                   aria-label="Открыть форму создания новой команды"
-                  className="h-10 gap-2"
+                  className="h-11 gap-2 px-4"
                   onSelect={() => {
                     setOpenDesktop(false)
                     setShowNewTeamDesktop(true)

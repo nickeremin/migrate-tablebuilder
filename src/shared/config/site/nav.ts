@@ -11,7 +11,7 @@ export const submenuLinks: NavItem[] = [
   },
   {
     title: "Настройки",
-    href: "/account",
+    href: "/settings",
   },
 ]
 

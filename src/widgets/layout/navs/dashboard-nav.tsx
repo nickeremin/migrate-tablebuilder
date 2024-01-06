@@ -3,6 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import { useAuth } from "@clerk/nextjs"
 import { motion } from "framer-motion"
 
 import { Icons } from "@/shared/components/icons"
@@ -10,13 +11,15 @@ import { submenuLinks } from "@/shared/config/site/nav"
 import { cn } from "@/shared/lib/utils"
 
 function DashboardNav() {
+  const { orgSlug } = useAuth()
   const pathname = usePathname()
+
+  const tabId = React.useId()
+  const [currentTab, setCurrentTab] = React.useState("")
 
   const submenuRef = React.useRef<HTMLDivElement | null>(null)
   const iconRef = React.useRef<HTMLAnchorElement | null>(null)
   const navRef = React.useRef<HTMLDivElement | null>(null)
-
-  const [currentTab, setCurrentTab] = React.useState("")
 
   // Submenu
   React.useEffect(() => {
@@ -92,9 +95,9 @@ function DashboardNav() {
                   <Link
                     key={index}
                     onMouseEnter={() => setCurrentTab(link.title)}
-                    href={link.href!}
+                    href={orgSlug ? `/${orgSlug}${link.href}` : link.href}
                     className={cn(
-                      "group relative inline-block px-3 py-4 text-sm/4",
+                      "group relative inline-block px-3 py-4 leading-[16px]",
                       String(pathname).includes(link.href!)
                         ? "text-accent-foreground before:absolute before:inset-x-2.5 before:bottom-0 before:border-b-2 before:border-primary before:content-['']"
                         : "text-muted-foreground"
@@ -102,11 +105,8 @@ function DashboardNav() {
                   >
                     {currentTab === link.title && (
                       <motion.div
-                        layoutId="dashboard-nav-highlight-tab"
-                        style={{
-                          borderRadius: 6,
-                        }}
-                        className="absolute inset-x-0 top-2 h-8 bg-accent"
+                        layoutId={tabId}
+                        className="absolute inset-x-0 top-1.5 h-9 rounded-md bg-accent"
                         transition={{ duration: 0.15 }}
                       />
                     )}

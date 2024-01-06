@@ -19,14 +19,13 @@ const MobileModalContent = React.forwardRef<
     <DrawerPrimitive.Overlay className="fixed inset-0 bg-zinc-950/60" />
     <DrawerPrimitive.Content
       ref={ref}
-      className={cn(
-        "fixed inset-x-0 bottom-0 rounded-t-xl bg-accent-600",
-        className
-      )}
+      className="fixed inset-x-0 bottom-0 rounded-t-xl bg-accent-600"
       {...props}
     >
-      <div className="mx-auto my-2 h-1.5 w-12 flex-shrink-0 rounded-full bg-accent-400" />
-      {children}
+      <div className="relative inset-x-0 top-0 my-2 flex items-start justify-center">
+        <span className="h-1.5 w-12 rounded-full bg-accent-400" />
+      </div>
+      <div className={cn("relative", className)}>{children}</div>
     </DrawerPrimitive.Content>
   </DrawerPrimitive.Portal>
 ))

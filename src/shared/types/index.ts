@@ -6,19 +6,20 @@ import { Icons } from "../components/icons"
 // Nav types
 export interface NavItem {
   title: string
-  href?: string
+  href: string
   disabled?: boolean
   external?: boolean
   icon?: keyof typeof icons
-  label?: string
   description?: string
 }
 
-export interface NavItemWithChildren extends NavItem {
+export interface NavItemWithChildren extends Omit<NavItem, "href"> {
+  href?: string
   items: NavItemWithChildren[]
 }
 
-export interface NavItemWithOptionalChildren extends NavItem {
+export interface NavItemWithOptionalChildren extends Omit<NavItem, "href"> {
+  href?: string
   items?: NavItemWithChildren[]
 }
 

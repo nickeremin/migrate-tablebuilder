@@ -3,7 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
-import { useUser } from "@clerk/nextjs"
+import { useClerk, useUser } from "@clerk/nextjs"
 
 import { UserNavSelectTheme } from "@/entities/theme"
 import { LucideIcon } from "@/shared/components/icons"
@@ -25,6 +25,7 @@ import { cn } from "@/shared/lib/utils"
 import { CreateOrganizationForm } from "../forms"
 
 function UserNav() {
+  const { signOut } = useClerk()
   const { user } = useUser()
   const router = useRouter()
 
@@ -90,7 +91,12 @@ function UserNav() {
               Тема
               <UserNavSelectTheme />
             </div>
-            <div className="flex cursor-pointer items-center justify-between px-5 py-2 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground">
+            <div
+              onClick={() => {
+                signOut(() => router.push("/signin"))
+              }}
+              className="flex cursor-pointer items-center justify-between px-5 py-2 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
+            >
               Выйти
               <LucideIcon name="LogOut" />
             </div>

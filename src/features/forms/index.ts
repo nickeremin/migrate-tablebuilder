@@ -2,7 +2,7 @@
   Here are all the forms with which the user interacts.
 */
 
-import EmailSignInForm from "./auth/email-signin-form"
+import SignInEmailForm from "./auth/signin-email-form"
 import SignInForm from "./auth/signin-form"
 import SignUpForm from "./auth/signup-form"
 import VerifyEmail from "./auth/verify-email"
@@ -26,7 +26,7 @@ export {
   SignInForm,
   SignUpForm,
   VerifyEmail,
-  EmailSignInForm,
+  SignInEmailForm,
   ContactSalesSupportForm,
   AddMembersForm,
   FeedbackForm,

@@ -1,14 +1,14 @@
 import Link from "next/link"
 
-import { Icons } from "@/shared/components/icons"
-import { Shell } from "@/shared/components/shells/shell"
+import CustomIcon from "@/shared/components/icons/custom-icon"
+import { Shell } from "@/shared/components/ui/shell"
 import { cn } from "@/shared/lib/utils"
 
 function VerificationHeader() {
   return (
     <div
       className={cn(
-        "sticky top-0 z-50 flex h-16 bg-background shadow-nav-border",
+        "shadow-nav-border sticky top-0 z-50 flex h-16 bg-background",
         // Before
         "before:absolute before:top-[-1px] before:-z-10 before:h-full before:w-full before:backdrop-blur-[6px] before:backdrop-saturate-200 before:content-['']"
       )}
@@ -18,9 +18,9 @@ function VerificationHeader() {
           <Link
             aria-label="Перейти на главную страницу"
             href="/"
-            className="flex items-center"
+            className="flex items-center gap-2"
           >
-            <Icons.logo className="mr-2 h-6 w-6" aria-hidden="true" />
+            <CustomIcon name="Logo" className="h-6 w-6" />
             <h1 className="text-xl font-bold">Tablebuilder</h1>
           </Link>
         </div>

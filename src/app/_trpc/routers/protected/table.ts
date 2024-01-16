@@ -1,5 +1,5 @@
-import { db } from "@/db"
-import { tables } from "@/db/schema"
+import { db } from "@/database"
+import { tables } from "@/database/schema"
 import { and, eq, ilike } from "drizzle-orm"
 import { v4 as uuidv4 } from "uuid"
 import * as z from "zod"

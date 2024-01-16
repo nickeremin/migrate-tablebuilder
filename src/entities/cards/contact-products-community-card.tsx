@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { ContactCommunity } from "@/(toSort)/site/constants"
 
 import { buttonVariants } from "@/shared/components/ui/button"
 import {
@@ -9,7 +10,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/shared/components/ui/card"
-import { ContactCommunity } from "@/shared/config/site/constants"
 import { cn } from "@/shared/lib/utils"
 
 interface ContactProductsCommunityCardProps {

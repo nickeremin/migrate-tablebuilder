@@ -27,7 +27,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "../shared/components/ui/table"
+} from "../../shared/components/ui/table"
 import { DataTablePagination } from "./data-table-pagination"
 import DataTableToolbar from "./data-table-toolbar"
 

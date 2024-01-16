@@ -1,8 +1,8 @@
 import * as React from "react"
 import Link from "next/link"
 
-import { Shell } from "@/shared/components/shells/shell"
 import { buttonVariants } from "@/shared/components/ui/button"
+import { Shell } from "@/shared/components/ui/shell"
 import { cn } from "@/shared/lib/utils"
 
 function HomePreview({}: React.HTMLAttributes<HTMLDivElement>) {

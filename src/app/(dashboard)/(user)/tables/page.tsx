@@ -5,7 +5,7 @@ import { useAuth } from "@clerk/nextjs"
 
 import { UserTables } from "@/widgets/pages"
 import { TablesLoading } from "@/entities/loadings"
-import { Shell } from "@/shared/components/shells/shell"
+import { Shell } from "@/shared/components/ui/shell"
 
 function TablesPage() {
   const { orgId, isLoaded } = useAuth()

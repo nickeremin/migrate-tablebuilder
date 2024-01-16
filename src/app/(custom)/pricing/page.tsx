@@ -2,6 +2,11 @@
 
 import * as React from "react"
 import Link from "next/link"
+import {
+  pricingAddOns,
+  pricingPlans,
+  pricingQuestions,
+} from "@/(toSort)/site/constants"
 import { ArrowRightIcon, CaretSortIcon } from "@radix-ui/react-icons"
 import { BoxIcon, CheckIcon, HeadphonesIcon } from "lucide-react"
 import { useInView } from "react-intersection-observer"
@@ -14,7 +19,6 @@ import {
   TrialPreveiw,
 } from "@/widgets/layout"
 import { PricingAddOnCard, PricingPlanCard } from "@/entities/cards"
-import { Shell } from "@/shared/components/shells/shell"
 import {
   Accordion,
   AccordionContent,
@@ -23,12 +27,8 @@ import {
 } from "@/shared/components/ui/accordion"
 import { Button, buttonVariants } from "@/shared/components/ui/button"
 import { PageHeading } from "@/shared/components/ui/page-header"
+import { Shell } from "@/shared/components/ui/shell"
 import { Spacer } from "@/shared/components/ui/spacer"
-import {
-  pricingAddOns,
-  pricingPlans,
-  pricingQuestions,
-} from "@/shared/config/site/constants"
 import { cn } from "@/shared/lib/utils"
 
 const generals = [
@@ -141,7 +141,7 @@ function PricingPage() {
 
       {/* Desktop plan tables */}
       <section className="hidden lg:block">
-        <header className="sticky top-[-10px] flex h-28 items-center bg-background shadow-nav-border first-line:z-10">
+        <header className="shadow-nav-border sticky top-[-10px] flex h-28 items-center bg-background first-line:z-10">
           <Shell>
             <div className="relative flex flex-col">
               <div className="flex items-center justify-end">
@@ -248,7 +248,7 @@ function PricingPage() {
       {/* Mobile plan tables */}
       <Drawer.Root open={open} onOpenChange={setOpen}>
         <section className="xl:hidden">
-          <header className="sticky top-[-10px] flex h-28 items-center bg-background shadow-nav-border first-line:z-10">
+          <header className="shadow-nav-border sticky top-[-10px] flex h-28 items-center bg-background first-line:z-10">
             <Shell>
               <div className="relative flex flex-col">
                 <div className="mx-auto w-full max-w-[570px]">
@@ -350,7 +350,7 @@ function PricingPage() {
         </section>
         <Drawer.Portal>
           <Drawer.Overlay className="fixed inset-0 z-50 bg-black/40" />
-          <Drawer.Content className="fixed inset-x-0 bottom-0 z-50 mt-24 flex flex-col rounded-t-lg border-t bg-accent-1 shadow-menu-border">
+          <Drawer.Content className="shadow-menu-border fixed inset-x-0 bottom-0 z-50 mt-24 flex flex-col rounded-t-lg border-t bg-accent-1">
             <div className="px-8 py-4 [&_button:nth-child(-n+2)]:border-b">
               {pricingPlans.map((item) => (
                 <button

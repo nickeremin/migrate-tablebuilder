@@ -18,78 +18,65 @@ module.exports = {
       colors: {
         // System Colors
         red: "rgb(var(--red-color))",
-        "red-accessible": "rgb(var(--red-color-accessible))",
-        green: "rgb(var(--green-color))",
-        "green-accessible": "rgb(var(--green-color-accessible))",
+        orange: "rgb(var(--orange-color))",
         yellow: "rgb(var(--yellow-color))",
-        "yellow-accessible": "rgb(var(--yellow-color-accessible))",
+        green: "rgb(var(--green-color))",
+        mint: "rgb(var(--mint-color))",
         blue: "rgb(var(--blue-color))",
-        "blue-accessible": "rgb(var(--blue-color-accessible))",
         purple: "rgb(var(--purple-color))",
-        "purple-accessible": "rgb(var(--purple-color-accessible))",
+        pink: "rgb(var(--pink-color))",
 
-        // System Colors
-        "accent-100": "rgb(var(--system-gray-color-100))",
-        "accent-accessible-100": "rgb(var(--system-gray-color-accessible-100))",
-        "accent-200": "rgb(var(--system-gray-color-200))",
-        "accent-accessible-200": "rgb(var(--system-gray-color-accessible-200))",
-        "accent-300": "rgb(var(--system-gray-color-300))",
-        "accent-accessible-300": "rgb(var(--system-gray-color-accessible-300))",
-        "accent-400": "rgb(var(--system-gray-color-400))",
-        "accent-accessible-400": "rgb(var(--system-gray-color-accessible-400))",
-        "accent-500": "rgb(var(--system-gray-color-500))",
-        "accent-accessible-500": "rgb(var(--system-gray-color-accessible-500))",
-        "accent-600": "rgb(var(--system-gray-color-600))",
-        "accent-accessible-600": "rgb(var(--system-gray-color-accessible-600))",
+        // System Gray Colors
+        gray: {
+          100: "rgb(var(--gray-color-100))",
+          200: "rgb(var(--gray-color-200))",
+          300: "rgb(var(--gray-color-300))",
+          400: "rgb(var(--gray-color-400))",
+          500: "rgb(var(--gray-color-500))",
+          600: "rgb(var(--gray-color-600))",
+          light: "rgb(var(--gray-light))",
+          dark: "rgb(var(--gray-dark))",
+        },
 
-        focus: "var(--focus-color)",
-        link: "var(--link-color)",
-        border: "hsl(var(--border))",
-        ring: "hsl(var(--ring))",
+        // Custom Colors
+        link: "rgb(var(--link-color))",
+
+        // Components Colors
         background: {
-          DEFAULT: "hsl(var(--background))",
+          DEFAULT: "rgb(var(--background))",
           100: "rgb(var(--ds-background-100))",
           200: "rgb(var(--ds-background-200))",
         },
-        foreground: "hsl(var(--foreground))",
-        disabled: "hsl(var(--disabled))",
+
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: "rgb(var(--primary))",
+          foreground: "rgb(var(--primary-foreground))",
         },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
-        },
+        secondary: "rgb(var(--secondary))",
+        tertiary: "rgb(var(--tertiary))",
+
         muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
-        },
-        accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
-          light: "var(--accent-light)",
-          1: "var(--accent-1)",
-          2: "var(--accent-2)",
-          3: "var(--accent-3)",
-          4: "var(--accent-4)",
-          5: "var(--accent-5)",
-          6: "var(--accent-6)",
-          7: "var(--accent-7)",
-          8: "var(--accent-8)",
+          DEFAULT: "rgb(var(--muted))",
+          foreground: "rgb(var(--muted-foreground))",
         },
 
-        // Gradients
-        "blue-start": "var(--blue-start-color)",
-        "blue-end": "var(--blue-end-color)",
-        "purple-start": "var(--purple-start-color)",
-        "purple-end": "var(--purple-end-color)",
-        "orange-start": "var(--orange-start-color)",
-        "orange-end": "var(--orange-end-color)",
+        accent: {
+          DEFAULT: "rgb(var(--accent))",
+          foreground: "rgb(var(--accent-foreground))",
+        },
+
+        destructive: {
+          DEFAULT: "rgb(var(--destructive))",
+          foreground: "rgb(var(--destructive-foreground))",
+        },
+
+        themed: {
+          border: "var(--themed-border)",
+          "border-hover": "var(--themed-border-hover)",
+        },
+
+        border: "rgb(var(--border))",
+        ring: "rgb(var(--ring))",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -125,25 +112,13 @@ module.exports = {
         table: "36px minmax(144px, 1fr) 144px 36px",
       },
       boxShadow: {
-        "border-nav": "0 1px 0 0 hsl(var(--border))",
-        "border-t": "inset 0 1px 0 0 hsl(var(--border))",
-        "border-b": "inset 0 -1px 0 0 hsl(var(--border))",
-        "border-r": "inset -1px 0 0 0 hsl(var(--border))",
-        "border-l": "inset 1px 0 0 0 hsl(var(--border))",
+        "border-nav": "0 1px 0 0 rgb(var(--border))",
+        "border-t": "inset 0 1px 0 0 rgb(var(--border))",
+        "border-b": "inset 0 -1px 0 0 rgb(var(--border))",
+        "border-r": "inset -1px 0 0 0 rgb(var(--border))",
+        "border-l": "inset 1px 0 0 0 rgb(var(--border))",
         popover:
           "0 0 0 1px hsl(var(--border)), 0px 1px 1px rgba(0,0,0,.02), 0px 4px 8px -4px rgba(0,0,0,.04), 0px 16px 24px -8px rgba(0,0,0,.06)",
-      },
-      width: {
-        "content-page": "var(--content-page-width)",
-        "content-page-with-margin": "var(--content-page-width-with-margin)",
-        page: "var(--page-width)",
-        "page-with-margin": "var(--page-width-with-margin)",
-      },
-      maxWidth: {
-        "content-page": "var(--content-page-width)",
-        "content-page-with-margin": "var(--content-page-width-with-margin)",
-        page: "var(--page-width)",
-        "page-with-margin": "var(--page-width-with-margin)",
       },
       transitionTimingFunction: {
         "menu-wrapper": "cubic-bezier(0.04, 0.04, 0.12, 0.96)",

@@ -6,7 +6,7 @@ import { BellIcon } from "@radix-ui/react-icons"
 
 import { FeedbackForm } from "@/features/forms"
 import { AccountSwitcher, TableSwitcher, UserNav } from "@/features/nav"
-import { Icons } from "@/shared/components/icons"
+import CustomIcon from "@/shared/components/icons/custom-icon"
 import { Badge } from "@/shared/components/ui/badge"
 import { Button } from "@/shared/components/ui/button"
 import { Separator } from "@/shared/components/ui/separator"
@@ -17,7 +17,7 @@ function TableHeader() {
       <div className="flex flex-1 items-center pr-6">
         <div className="flex max-w-full items-center">
           <Link href="/dashboard" className="hidden sm:block">
-            <Icons.logo className="h-6 w-6" />
+            <CustomIcon name="Logo" className="h-6 w-6" />
           </Link>
 
           <Separator
@@ -25,7 +25,7 @@ function TableHeader() {
             className="mx-5 hidden h-6 rotate-[30deg] sm:block"
           />
 
-          <AccountSwitcher expanded={false} plan="free" />
+          <AccountSwitcher expanded={false} />
 
           <Separator
             orientation="vertical"
@@ -44,7 +44,7 @@ function TableHeader() {
             className="space-x-1 rounded-full px-2"
           >
             <BellIcon className="h-5 w-5" />
-            <Badge className="hidden rounded-full bg-primary-blue px-1.5 py-0.5 text-white shadow-none hover:bg-primary-blue md:block">
+            <Badge className="bg-primary-blue hover:bg-primary-blue hidden rounded-full px-1.5 py-0.5 text-white shadow-none md:block">
               4
             </Badge>
             <span className="sr-only">Открыть уведомления</span>

@@ -1,8 +1,9 @@
+import { contactActions, contactSupports } from "@/(toSort)/site/constants"
+
 import { TrialPreveiw } from "@/widgets/layout"
 import { ContactActionCard, ContactSupportCard } from "@/entities/cards"
-import { Shell } from "@/shared/components/shells/shell"
 import { PageHeading } from "@/shared/components/ui/page-header"
-import { contactActions, contactSupports } from "@/shared/config/site/constants"
+import { Shell } from "@/shared/components/ui/shell"
 import { cn } from "@/shared/lib/utils"
 
 function ContactPage() {

@@ -8,7 +8,7 @@ import {
   useTrail,
 } from "@react-spring/web"
 
-import { Shell } from "@/shared/components/shells/shell"
+import { Shell } from "@/shared/components/ui/shell"
 
 const COORDS = [
   [50, 20],

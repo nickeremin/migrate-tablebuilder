@@ -10,14 +10,11 @@ import {
 import "react-vertical-timeline-component/style.min.css"
 
 import Link from "next/link"
+import { timelineActions, type TimelineAction } from "@/(toSort)/site/constants"
 
-import { Shell } from "@/shared/components/shells/shell"
 import { buttonVariants } from "@/shared/components/ui/button"
 import { PageHeading } from "@/shared/components/ui/page-header"
-import {
-  timelineActions,
-  type TimelineAction,
-} from "@/shared/config/site/constants"
+import { Shell } from "@/shared/components/ui/shell"
 import { cn } from "@/shared/lib/utils"
 
 interface TimelineCardProps

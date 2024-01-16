@@ -3,8 +3,8 @@ import Link from "next/link"
 import Balancer from "react-wrap-balancer"
 
 import { SearchPosts } from "@/features/search"
-import { Shell } from "@/shared/components/shells/shell"
 import { PageHeading } from "@/shared/components/ui/page-header"
+import { Shell } from "@/shared/components/ui/shell"
 import { cn } from "@/shared/lib/utils"
 
 import productSupport from "/public/assets/product-support.png"

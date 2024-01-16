@@ -1,69 +1,31 @@
-import {
-  AccessibilityIcon,
-  ActivityLogIcon,
-  DashboardIcon,
-  GlobeIcon,
-  RocketIcon,
-} from "@radix-ui/react-icons"
-import {
-  AlertTriangle,
-  Check,
-  ChevronLeft,
-  ChevronRight,
-  ChevronsUpDown,
-  DatabaseIcon,
-  LoaderIcon,
-  LogOut,
-  MailCheck,
-  MailX,
-  Moon,
-  Plus,
-  Search,
-  Send,
-  SlidersHorizontal,
-  Sun,
-  Table2Icon,
-  User,
-  UserCogIcon,
-  UserPlusIcon,
-} from "lucide-react"
+import { AccessibilityIcon, GlobeIcon, RocketIcon } from "@radix-ui/react-icons"
 
-import LogoIcon, { LogoIconProps } from "../logo"
+import { cn } from "@/shared/lib/utils"
 
-type IconProps = React.HTMLAttributes<SVGElement>
+export type IconProps = React.HTMLAttributes<SVGElement>
 
-export const Icons = {
-  warning: AlertTriangle,
-  filter: SlidersHorizontal,
-  right: ChevronRight,
-  left: ChevronLeft,
-  send: Send,
-  light: Sun,
-  dark: Moon,
-  upDown: ChevronsUpDown,
-  search: Search,
-  user: User,
-  signout: LogOut,
-  emailVerified: MailCheck,
-  emailNotVerified: MailX,
-  add: Plus,
-
-  // Stable
-  spinner: LoaderIcon,
-  settings: UserCogIcon,
+export const customIcons = {
   // About page
-  easy: RocketIcon,
-  globe: GlobeIcon,
-  accessible: AccessibilityIcon,
-  // Pricing page
-  check: Check,
-  // Dashboard page
-  table: Table2Icon,
-  storage: DatabaseIcon,
-  addUser: UserPlusIcon,
-
-  logo: ({ ...props }: LogoIconProps) => <LogoIcon {...props} />,
-  discord: ({ ...props }: IconProps) => (
+  // easy: RocketIcon,
+  // globe: GlobeIcon,
+  // accessible: AccessibilityIcon,
+  Logo: ({ className, ...props }: IconProps) => <div></div>,
+  // <svg
+  //   xmlns="http://www.w3.org/2000/svg"
+  //   viewBox="0 0 30 30"
+  //   {...props}
+  // ></svg>
+  // <div
+  //   className={cn(
+  //     "relative h-8 w-8 rounded border-2 border-primary/75 bg-primary/10 dark:bg-primary/20",
+  //     className
+  //   )}
+  //   {...props}
+  // >
+  //   <div className="absolute left-0 top-[20%] w-full border-b-2 border-inherit" />
+  //   <div className="absolute left-[20%] top-0 h-full border-r-2 border-inherit" />
+  // </div>
+  Discord: ({ ...props }: IconProps) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" {...props}>
       <path
         fill="currentColor"
@@ -71,7 +33,7 @@ export const Icons = {
       ></path>
     </svg>
   ),
-  gitHub: (props: IconProps) => (
+  GitHub: (props: IconProps) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" {...props}>
       <path
         fill="currentColor"
@@ -79,7 +41,7 @@ export const Icons = {
       ></path>
     </svg>
   ),
-  google: ({ ...props }: IconProps) => (
+  Google: ({ ...props }: IconProps) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" {...props}>
       <path
         fill="currentColor"
@@ -87,7 +49,7 @@ export const Icons = {
       ></path>
     </svg>
   ),
-  telegram: ({ ...props }: IconProps) => (
+  Telegram: ({ ...props }: IconProps) => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" {...props}>
       <path
         fill="currentColor"
@@ -95,7 +57,7 @@ export const Icons = {
       ></path>
     </svg>
   ),
-  database: ({ ...props }: IconProps) => (
+  Database: ({ ...props }: IconProps) => (
     <svg
       fill="none"
       height="38"

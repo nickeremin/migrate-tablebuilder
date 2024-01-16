@@ -4,9 +4,7 @@ import * as React from "react"
 import Link from "next/link"
 import { BookOpenIcon } from "lucide-react"
 
-import { Icons } from "@/shared/components/icons"
-import LogoIcon from "@/shared/components/logo"
-import { Shell } from "@/shared/components/shells/shell"
+import CustomIcon from "@/shared/components/icons/custom-icon"
 import { buttonVariants } from "@/shared/components/ui/button"
 import {
   Card,
@@ -16,6 +14,7 @@ import {
   CardTitle,
 } from "@/shared/components/ui/card"
 import { PageHeading } from "@/shared/components/ui/page-header"
+import { Shell } from "@/shared/components/ui/shell"
 import { cn } from "@/shared/lib/utils"
 
 function ContactProductsPage() {
@@ -162,7 +161,7 @@ function ContactProductsPage() {
         >
           <div className="flex flex-col items-center gap-6">
             <div className="flex h-16 w-16 flex-col items-center justify-center rounded-full bg-foreground text-background">
-              <LogoIcon className="h-7 w-7 border-background" />
+              <CustomIcon name="Logo" className="h-7 w-7 border-background" />
             </div>
             <div>
               <p className="text-center text-xl text-muted-foreground">
@@ -196,7 +195,7 @@ function ContactProductsPage() {
                     })
                   )}
                 >
-                  <Icons.gitHub className="h-8 w-8 pr-2" />
+                  <CustomIcon name="GitHub" className="h-8 w-8 pr-2" />
                   Перейти на GitHub
                 </Link>
               </CardFooter>

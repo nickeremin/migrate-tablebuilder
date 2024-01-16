@@ -1,7 +1,7 @@
 "use server"
 
-import { db } from "@/db"
-import { tableRecords, tables } from "@/db/schema"
+import { db } from "@/database"
+import { tableRecords, tables } from "@/database/schema"
 import { and, eq } from "drizzle-orm"
 import { v4 as uuidv4 } from "uuid"
 

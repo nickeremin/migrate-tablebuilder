@@ -3,6 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
+import { mobileNavLinks } from "@/(toSort)/site/nav"
 import { useUser } from "@clerk/nextjs"
 import { AnimatePresence, motion, useCycle, Variants } from "framer-motion"
 import { useMediaQuery } from "usehooks-ts"
@@ -17,7 +18,6 @@ import {
 } from "@/shared/components/ui/accordion"
 import { Avatar, AvatarImage } from "@/shared/components/ui/avatar"
 import { Button, buttonVariants } from "@/shared/components/ui/button"
-import { mobileNavLinks } from "@/shared/config/site/nav"
 import { cn } from "@/shared/lib/utils"
 
 const menuVariants: Variants = {
@@ -49,7 +49,7 @@ const containerVariants: Variants = {
 }
 
 interface MobileNavMenuProps {
-  headerId: string
+  headerId?: string
 }
 
 function MobileNavMenu({ headerId }: MobileNavMenuProps) {
@@ -71,10 +71,10 @@ function MobileNavMenu({ headerId }: MobileNavMenuProps) {
     }
   }, [isOpen])
 
-  if (!isLoaded || !isMobile) return null
+  // if (!isLoaded || !isMobile) return null
 
   return (
-    <div>
+    <div className="">
       <MenuToggleButton isOpen={isOpen} onCLick={toggleOpen} />
       <AnimatePresence>
         {isOpen && (
@@ -83,7 +83,7 @@ function MobileNavMenu({ headerId }: MobileNavMenuProps) {
             initial="closed"
             exit="closed"
             animate={isOpen ? "open" : "closed"}
-            className="bg-accent-light fixed inset-x-0 bottom-0 top-16 z-50 origin-top"
+            className="fixed inset-x-0 top-16 z-50 h-[calc(100vh-64px)] origin-top bg-gray-600"
           >
             <motion.nav
               variants={containerVariants}
@@ -114,7 +114,7 @@ function MobileNavMenu({ headerId }: MobileNavMenuProps) {
                     <li className="flex h-[72px] items-center justify-between border-b hover:bg-accent">
                       <div className="flex flex-col">
                         <p className="text-sm">{user.username}</p>
-                        <p className="text-sm text-secondary-foreground">
+                        <p className="text-secondary-foreground text-sm">
                           {user.primaryEmailAddress?.emailAddress}
                         </p>
                       </div>
@@ -213,7 +213,7 @@ function MobileNavMenu({ headerId }: MobileNavMenuProps) {
                                 <Link
                                   key={i}
                                   href={item.href!}
-                                  className="flex h-12 items-center gap-2 text-base text-secondary-foreground"
+                                  className="text-secondary-foreground flex h-12 items-center gap-2 text-base"
                                 >
                                   <LucideIcon name={item.icon!} />
                                   {item.title}
@@ -265,7 +265,7 @@ function MenuToggleButton({ isOpen, onCLick }: MenuToggleButtonProps) {
       >
         <span
           className={cn(
-            "absolute left-1.5 top-[15px] h-px w-5 rounded bg-foreground",
+            "absolute left-1.5 top-[15px] h-px w-5 rounded bg-primary",
             isOpen
               ? "transition-menu-crust-out translate-y-0"
               : "transition-menu-crust-in -translate-y-1"
@@ -282,7 +282,7 @@ function MenuToggleButton({ isOpen, onCLick }: MenuToggleButtonProps) {
       >
         <span
           className={cn(
-            "absolute bottom-[15px] left-1.5 h-px w-5 rounded bg-foreground",
+            "absolute bottom-[15px] left-1.5 h-px w-5 rounded bg-primary",
             isOpen
               ? "transition-menu-crust-out translate-y-0"
               : "transition-menu-crust-in translate-y-1"

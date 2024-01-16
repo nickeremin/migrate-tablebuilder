@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
-import { SelectTable } from "@/db/schema"
+import { SelectTable } from "@/database/schema"
 import { StarFilledIcon, StarIcon } from "@radix-ui/react-icons"
 import { MoreHorizontalIcon } from "lucide-react"
 import { Drawer } from "vaul"

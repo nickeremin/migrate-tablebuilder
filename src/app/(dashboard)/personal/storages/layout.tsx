@@ -3,9 +3,9 @@ import Link from "next/link"
 import { ExternalLinkIcon } from "@radix-ui/react-icons"
 
 import { DashboardHeader, DashboardNav, SiteFooter } from "@/widgets/layout"
-import { Shell } from "@/shared/components/shells/shell"
 import { Button } from "@/shared/components/ui/button"
 import { PageHeading } from "@/shared/components/ui/page-header"
+import { Shell } from "@/shared/components/ui/shell"
 
 interface StoragesLayoutProps {
   children: React.ReactNode

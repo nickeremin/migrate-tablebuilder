@@ -3,11 +3,11 @@
 import * as React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import { submenuLinks } from "@/(toSort)/site/nav"
 import { useAuth } from "@clerk/nextjs"
 import { motion } from "framer-motion"
 
-import { Icons } from "@/shared/components/icons"
-import { submenuLinks } from "@/shared/config/site/nav"
+import CustomIcon from "@/shared/components/icons/custom-icon"
 import { cn } from "@/shared/lib/utils"
 
 function DashboardNav() {
@@ -79,7 +79,7 @@ function DashboardNav() {
               href="/"
               className="invisible my-auto hidden h-6 w-6 -translate-y-7 appearance-none items-center opacity-0 transition-all duration-300 lg:inline-flex"
             >
-              <Icons.logo className="h-6 w-6" />
+              <CustomIcon name="Logo" className="h-6 w-6" />
             </Link>
             <div
               ref={navRef}

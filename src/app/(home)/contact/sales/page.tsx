@@ -4,8 +4,8 @@ import * as React from "react"
 import Link from "next/link"
 
 import { ContactSalesSupportForm } from "@/features/forms"
-import { Shell } from "@/shared/components/shells/shell"
 import { PageHeading } from "@/shared/components/ui/page-header"
+import { Shell } from "@/shared/components/ui/shell"
 
 function ContactSalesPage() {
   const shellRef = React.useRef<HTMLDivElement | null>(null)

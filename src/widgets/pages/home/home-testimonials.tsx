@@ -1,7 +1,7 @@
 import React from "react"
+import { testimonials, type Testimonial } from "@/(toSort)/site/constants"
 
-import { Icons } from "@/shared/components/icons"
-import { Shell } from "@/shared/components/shells/shell"
+import CustomIcon from "@/shared/components/icons/custom-icon"
 import {
   Avatar,
   AvatarFallback,
@@ -14,8 +14,8 @@ import {
   CardTitle,
 } from "@/shared/components/ui/card"
 import { ScrollArea, ScrollBar } from "@/shared/components/ui/scroll-area"
+import { Shell } from "@/shared/components/ui/shell"
 import { Skeleton } from "@/shared/components/ui/skeleton"
-import { testimonials, type Testimonial } from "@/shared/config/site/constants"
 
 interface TestimonialCard {
   testimonial: Testimonial
@@ -49,7 +49,10 @@ function HomeTestimonials() {
                 </AvatarFallback>
               </Avatar>
               <div className="relative -ml-8 flex h-16 w-16 items-center justify-center bg-transparent lg:h-20 lg:w-20">
-                <Icons.gitHub className="h-full w-full rounded-full" />
+                <CustomIcon
+                  name="GitHub"
+                  className="h-full w-full rounded-full"
+                />
               </div>
             </div>
             <div className="flex flex-col gap-1">

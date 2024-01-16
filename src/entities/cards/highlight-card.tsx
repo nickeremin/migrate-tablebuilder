@@ -1,13 +1,12 @@
-import { Icons } from "@/shared/components/icons"
-import { type AboutHighlight } from "@/shared/config/site/constants"
+import { type AboutHighlight } from "@/(toSort)/site/constants"
+
+import { LucideIcon } from "@/shared/components/icons"
 
 interface HighlightCardProps {
   highlight: AboutHighlight
 }
 
 function HighlightCard({ highlight }: HighlightCardProps) {
-  const Icon = Icons[highlight.icon]
-
   return (
     <div
       key={highlight.title}
@@ -15,7 +14,7 @@ function HighlightCard({ highlight }: HighlightCardProps) {
     >
       <div className="flex gap-6">
         <div className="mt-2 flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary text-background">
-          <Icon className="h-5 w-5" />
+          <LucideIcon name={highlight.icon} />
         </div>
         <div>
           <p className="text-2xl font-semibold">{highlight.title}</p>

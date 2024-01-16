@@ -6,8 +6,8 @@ import "@/mdx/mdx.css"
 import { Mdx } from "@/mdx/mdx-components"
 
 import { HomeHeader, SiteFooter } from "@/widgets/layout"
-import { Shell } from "@/shared/components/shells/shell"
 import { PageHeading } from "@/shared/components/ui/page-header"
+import { Shell } from "@/shared/components/ui/shell"
 import { Spacer } from "@/shared/components/ui/spacer"
 
 interface PageProps {

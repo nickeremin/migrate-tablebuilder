@@ -1,11 +1,11 @@
 "use client"
 
 import * as React from "react"
+import { themes } from "@/(toSort)/site/constants"
 import { useTheme } from "next-themes"
 
 import { LucideIcon } from "@/shared/components/icons"
 import { Label } from "@/shared/components/ui/label"
-import { themes } from "@/shared/config/site/constants"
 
 function UserNavSelectTheme() {
   const themeSelectId = React.useId()

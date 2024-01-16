@@ -2,15 +2,15 @@
 
 import * as React from "react"
 import { useSearchParams } from "next/navigation"
-import { isMagicLinkError, MagicLinkErrorCode, useClerk } from "@clerk/nextjs"
+import { EmailLinkErrorCode, isEmailLinkError, useClerk } from "@clerk/nextjs"
 
-import { Icons } from "@/shared/components/icons"
+import { LucideIcon } from "@/shared/components/icons"
 import { PageHeading } from "@/shared/components/ui/page-header"
 import { useCreateQueryString } from "@/shared/lib/hooks"
 
 function VerifyEmail() {
   const [verificationStatus, setVerificationStatus] = React.useState("loading")
-  const { handleMagicLinkVerification } = useClerk()
+  const { handleEmailLinkVerification } = useClerk()
 
   // Check your search params to navigate to the correct verification completion option
   const searchParams = useSearchParams()
@@ -21,7 +21,7 @@ function VerifyEmail() {
   React.useEffect(() => {
     async function verify() {
       try {
-        await handleMagicLinkVerification({
+        await handleEmailLinkVerification({
           redirectUrlComplete: `http://localhost:3000/verification-complete?${createQueryString(
             {
               email: email ?? null,
@@ -38,8 +38,8 @@ function VerifyEmail() {
           let status = "failed"
 
           if (
-            isMagicLinkError(error) &&
-            error.code === MagicLinkErrorCode.Expired
+            isEmailLinkError(error) &&
+            error.code === EmailLinkErrorCode.Expired
           ) {
             status = "expired"
           }
@@ -71,8 +71,8 @@ function VerifyEmail() {
       <PageHeading size="sm" className="my-8 font-bold">
         Проверка
       </PageHeading>
-      <span className="mt-1">
-        <Icons.spinner className="h-6 w-6 animate-spin" />
+      <span className="translate-y-1">
+        <LucideIcon name="Loader" className="h-6 w-6 animate-spin" />
       </span>
     </div>
   )

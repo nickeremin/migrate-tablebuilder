@@ -1,5 +1,5 @@
 import { DashboardHeader, DashboardNav, SiteFooter } from "@/widgets/layout"
-import { Shell } from "@/shared/components/shells/shell"
+import { Shell } from "@/shared/components/ui/shell"
 
 async function TablesPage() {
   return (

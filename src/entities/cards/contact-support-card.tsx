@@ -1,9 +1,9 @@
 import Image from "next/image"
 import Link from "next/link"
+import { type ContactSupport } from "@/(toSort)/site/constants"
 
 import { buttonVariants } from "@/shared/components/ui/button"
 import { Card, CardHeader } from "@/shared/components/ui/card"
-import { type ContactSupport } from "@/shared/config/site/constants"
 import { cn } from "@/shared/lib/utils"
 
 interface ContactSupportCardProps {
@@ -14,7 +14,7 @@ function ContactSupportCard({ contact }: ContactSupportCardProps) {
   return (
     <Card
       key={contact.title}
-      className="max-w-xl flex-1 overflow-hidden border-foreground/50 shadow-bottom-border"
+      className="shadow-bottom-border max-w-xl flex-1 overflow-hidden border-foreground/50"
     >
       <div className="relative flex flex-col items-center justify-center">
         <div className="absolute inset-0 bg-gradient-to-t from-transparent to-foreground/10 dark:to-foreground/20" />

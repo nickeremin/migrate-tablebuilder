@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form"
 import { toast } from "sonner"
 import * as z from "zod"
 
-import { Icons } from "@/shared/components/icons"
+import { LucideIcon } from "@/shared/components/icons"
 import { Button } from "@/shared/components/ui/button"
 import { Card, CardTitle } from "@/shared/components/ui/card"
 import {
@@ -119,16 +119,13 @@ function UpdateEmailForm() {
             </p>
             <Button
               className={cn(
-                "h-12 w-full max-w-[320px] rounded-full sm:h-10 sm:w-fit sm:rounded-md",
+                "h-12 w-full max-w-[320px] gap-2 rounded-full sm:h-10 sm:w-fit sm:rounded-md",
                 user ? "visible" : "invisible"
               )}
               disabled={isPending}
             >
               {isPending && (
-                <Icons.spinner
-                  className="mr-2 h-4 w-4 animate-spin"
-                  aria-hidden="true"
-                />
+                <LucideIcon name="Loader" className="h-4 w-4 animate-spin" />
               )}
               Сохранить
             </Button>

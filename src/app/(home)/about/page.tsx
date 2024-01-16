@@ -1,10 +1,10 @@
 import Link from "next/link"
+import { aboutHighlights } from "@/(toSort)/site/constants"
 
 import { HighlightCard } from "@/entities/cards"
-import { Shell } from "@/shared/components/shells/shell"
 import { buttonVariants } from "@/shared/components/ui/button"
 import { PageHeading } from "@/shared/components/ui/page-header"
-import { aboutHighlights } from "@/shared/config/site/constants"
+import { Shell } from "@/shared/components/ui/shell"
 import { cn } from "@/shared/lib/utils"
 
 function AboutPage() {
@@ -14,7 +14,7 @@ function AboutPage() {
         <Shell className="py-6 lg:pt-16">
           <div className="flex flex-col items-center justify-between gap-6">
             <div className="flex flex-col items-center">
-              <p className="my-3 text-sm uppercase text-primary-blue">
+              <p className="text-primary-blue my-3 text-sm uppercase">
                 Наше предназначение
               </p>
               <PageHeading as="h2" size="lg" className="text-center font-bold">

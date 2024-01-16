@@ -5,27 +5,26 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/shared/lib/utils"
 
 const buttonVariants = cva(
-  `inline-flex items-center justify-center font-medium transition-colors select-none 
-  disabled:bg-muted disabled:ring-1 disabled:ring-border disabled:text-muted-foreground disabled:cursor-not-allowed
-  focus-visible:outline-none focus-visible:ring-focus focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-background-100`,
+  `inline-flex items-center justify-center font-medium transition-all select-none outline-none 
+  disabled:bg-muted disabled:ring-1 disabled:ring-themed-border disabled:text-muted-foreground disabled:cursor-not-allowed`,
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
-        destructive: "bg-red text-destructive-foreground hover:bg-red/90",
+        default: "bg-primary text-primary-foreground hover:bg-primary/80",
         outline:
-          "ring-1 ring-border hover:bg-accent text-secondary-foreground hover:text-primary",
-        secondary: "bg-secondary text-foreground hover:bg-secondary/80",
+          "ring-1 ring-themed-border hover:ring-themed-border-hover bg-background-100 hover:bg-accent text-primary",
+        secondary: "bg-accent text-accent-foreground hover:bg-muted",
         ghost: "hover:bg-accent hover:text-accent-foreground",
+        destructive: "bg-red text-gray-light hover:bg-red/80",
         link: "text-primary underline-offset-4 hover:underline",
-        success: "bg-blue hover:bg-blue/90 text-white",
+        success: "bg-blue text-gray-light hover:bg-blue/80 ",
         empty: "",
       },
       size: {
         default: "h-9 px-3 rounded-md text-sm",
-        sm: "h-8  rounded-md px-2 text-xs",
-        lg: "h-10 rounded-lg px-4 text-sm",
-        xl: "h-12 rounded-xl px-6 text-base",
+        sm: "h-8 rounded-md px-2 text-xs",
+        md: "h-10 rounded-md px-4 text-sm",
+        lg: "h-12 rounded-lg px-6 text-base",
         icon: "h-9 w-9 rounded-md",
         empty: "",
       },
@@ -48,6 +47,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const Comp = asChild ? Slot : "button"
     return (
       <Comp
+        data-shadcnui-button
         className={cn(buttonVariants({ variant, size, className }))}
         ref={ref}
         {...props}

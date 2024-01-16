@@ -13,12 +13,10 @@ import {
   ExternalLinkIcon,
   ValueIcon,
 } from "@radix-ui/react-icons"
-import { animated, useSpring } from "@react-spring/web"
 import { MoveLeftIcon } from "lucide-react"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
 
-import { Icons } from "@/shared/components/icons"
 import { Button } from "@/shared/components/ui/button"
 import {
   Form,
@@ -33,7 +31,6 @@ import { Label } from "@/shared/components/ui/label"
 import { PageHeading } from "@/shared/components/ui/page-header"
 import { RadioGroup, RadioGroupItem } from "@/shared/components/ui/radio-group"
 import { Spacer } from "@/shared/components/ui/spacer"
-import { oauthProviders } from "@/shared/config/site/oauth"
 import { catchClerkError, cn } from "@/shared/lib/utils"
 import { authSchema } from "@/shared/lib/validations/auth"
 
@@ -50,19 +47,6 @@ const SignUpForm = () => {
   const [, setExpired] = React.useState(false)
   const [, setVerified] = React.useState(false)
   const { isLoaded, setActive, signUp } = useSignUp()
-
-  const styles = useSpring({
-    from: {
-      opacity: 0,
-    },
-    to: {
-      opacity: 1,
-    },
-    config: {
-      friction: 120,
-      tension: 240,
-    },
-  })
 
   // Initializing react-hook-form with zod
   const form = useForm<Inputs>({
@@ -185,10 +169,7 @@ const SignUpForm = () => {
   }
 
   return (
-    <animated.div
-      style={styles}
-      className="flex min-h-[85vh] flex-col justify-between px-6"
-    >
+    <div className="flex min-h-[85vh] flex-col justify-between px-6">
       <div className="flex flex-col items-center">
         <div className="flex w-full flex-col items-center pt-28">
           <Form {...form}>
@@ -218,7 +199,6 @@ const SignUpForm = () => {
                                 <FormControl>
                                   <Input
                                     type="text"
-                                    variant="xl"
                                     placeholder="Введите почту"
                                     {...field}
                                   />
@@ -231,14 +211,14 @@ const SignUpForm = () => {
                             aria-label="Отправить ссылку для подтверждения электронной почты"
                             type="submit"
                             disabled={isPending}
-                            size="xl"
+                            size="lg"
                           >
-                            {isPending && (
+                            {/* {isPending && (
                               <Icons.spinner
                                 className="mr-2 h-4 w-4 animate-spin"
                                 aria-hidden="true"
                               />
-                            )}
+                            )} */}
                             <EnvelopeClosedIcon
                               className="mr-2 h-4 w-4"
                               aria-hidden="true"
@@ -281,7 +261,7 @@ const SignUpForm = () => {
                     <div className="flex w-full flex-col items-center">
                       <div className="w-full max-w-[320px]">
                         {/* OAuth buttons to sign up */}
-                        <div className="flex flex-col gap-3">
+                        {/* <div className="flex flex-col gap-3">
                           {oauthProviders.map((provider) => {
                             const Icon = Icons[provider.icon]
 
@@ -313,7 +293,7 @@ const SignUpForm = () => {
                               </Button>
                             )
                           })}
-                        </div>
+                        </div> */}
 
                         <div className="relative my-5">
                           <div className="absolute inset-0 flex items-center">
@@ -331,7 +311,7 @@ const SignUpForm = () => {
                           aria-label="Продолжить регистрацию по электронной почте"
                           variant="outline"
                           className="w-full"
-                          size="xl"
+                          size="lg"
                           onClick={() => setEmailStep(true)}
                         >
                           <EnvelopeClosedIcon
@@ -449,12 +429,7 @@ const SignUpForm = () => {
                               <FormLabel className="text-sm text-muted-foreground">
                                 Имя пользователя
                               </FormLabel>
-                              <Input
-                                type="text"
-                                maxLength={32}
-                                variant="xl"
-                                {...field}
-                              />
+                              <Input type="text" maxLength={32} {...field} />
                             </FormItem>
                           )}
                         />
@@ -467,14 +442,14 @@ const SignUpForm = () => {
                           !form.getValues("subscriptionPlan")?.length ||
                           !form.getValues("username")?.length
                         }
-                        size="xl"
+                        size="lg"
                       >
-                        {isPending && (
+                        {/* {isPending && (
                           <Icons.spinner
                             className="mr-2 h-4 w-4 animate-spin"
                             aria-hidden="true"
                           />
-                        )}
+                        )} */}
                         Продолжить
                       </Button>
                     </div>
@@ -535,7 +510,7 @@ const SignUpForm = () => {
           </p>
         </div>
       </div>
-    </animated.div>
+    </div>
   )
 }
 

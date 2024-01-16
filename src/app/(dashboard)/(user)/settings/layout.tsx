@@ -2,8 +2,8 @@ import { redirect } from "next/navigation"
 import { currentUser } from "@clerk/nextjs"
 
 import { DashboardHeader, DashboardNav, SiteFooter } from "@/widgets/layout"
-import { Shell } from "@/shared/components/shells/shell"
 import { PageHeading } from "@/shared/components/ui/page-header"
+import { Shell } from "@/shared/components/ui/shell"
 
 interface TablesLayoutProps {
   children: React.ReactNode

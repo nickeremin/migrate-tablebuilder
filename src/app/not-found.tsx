@@ -6,19 +6,19 @@ import Link from "next/link"
 import { useUser } from "@clerk/nextjs"
 
 import { SiteFooter } from "@/widgets/layout"
-import { Icons } from "@/shared/components/icons"
+import CustomIcon from "@/shared/components/icons/custom-icon"
 import { Separator } from "@/shared/components/ui/separator"
 import { Skeleton } from "@/shared/components/ui/skeleton"
 
-const DesktopNavbar = dynamic(
-  () => import("/src/widgets/layout/navs/desktop-navbar.tsx"),
-  { ssr: false }
-)
+// const DesktopNavbar = dynamic(
+//   () => import("/src/widgets/layout/navs/desktop-navbar.tsx"),
+//   { ssr: false }
+// )
 
-const MobileNavMenu = dynamic(
-  () => import("/src/widgets/layout/navs/mobile-nav-menu.tsx"),
-  { ssr: false }
-)
+// const MobileNavMenu = dynamic(
+//   () => import("/src/widgets/layout/navs/mobile-nav-menu.tsx"),
+//   { ssr: false }
+// )
 
 function RootNotFound() {
   const { user, isLoaded } = useUser()
@@ -28,7 +28,7 @@ function RootNotFound() {
   if (!isLoaded) {
     return (
       <div className="relative min-h-screen">
-        <div className="h-[102px] bg-accent-1 shadow-border-b">
+        <div className="bg-accent-1 h-[102px] shadow-border-b">
           <div className="relative m-auto flex h-16 select-none items-center px-4 lg:px-6">
             <div className="flex flex-1 items-center pr-6">
               <Skeleton className="h-8 w-40" />
@@ -43,12 +43,12 @@ function RootNotFound() {
 
   return (
     <div className="relative min-h-screen">
-      <div className="sticky top-0 h-16 bg-accent-1 shadow-border-b">
+      <div className="bg-accent-1 sticky top-0 h-16 shadow-border-b">
         <div className="m-auto flex h-full select-none items-center bg-inherit px-4 lg:px-6">
           <div className="flex flex-1 items-center pr-6">
             <div className="flex max-w-full items-center">
               <Link href="/tables">
-                <Icons.logo className="h-6 w-6" />
+                <CustomIcon name="Logo" className="h-6 w-6" />
               </Link>
               <Separator
                 orientation="vertical"
@@ -60,8 +60,8 @@ function RootNotFound() {
               ></Link>
             </div>
           </div>
-          <DesktopNavbar />
-          <MobileNavMenu backgroundColor="bg-accent-1" />
+          {/* <DesktopNavbar />
+          <MobileNavMenu /> */}
         </div>
       </div>
       <main className="flex min-h-[calc(100vh-64px)] flex-col items-center justify-center py-12">

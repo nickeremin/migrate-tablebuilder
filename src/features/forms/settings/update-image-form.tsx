@@ -14,7 +14,8 @@ import ReactCrop, {
 } from "react-image-crop"
 import { toast } from "sonner"
 
-import { Icons } from "@/shared/components/icons"
+import { LucideIcon } from "@/shared/components/icons"
+import CustomIcon from "@/shared/components/icons/custom-icon"
 import {
   Avatar,
   AvatarFallback,
@@ -173,7 +174,7 @@ function UpdateImageForm() {
                 aria-label={user?.username ?? ""}
                 src={user?.imageUrl}
                 alt={user?.imageUrl}
-                className="relative bg-transparent before:absolute before:bottom-0 before:left-0 before:z-50 before:h-28 before:w-28 before:bg-red-200 before:content-['']"
+                className="before:bg-red-200 relative bg-transparent before:absolute before:bottom-0 before:left-0 before:z-50 before:h-28 before:w-28 before:content-['']"
               />
               <AvatarFallback>
                 <Skeleton className="h-full w-full rounded-full" />
@@ -250,12 +251,13 @@ function UpdateImageForm() {
               >
                 Отмена
               </Button>
-              <Button disabled={isPending} onClick={onDownloadCropClick}>
+              <Button
+                disabled={isPending}
+                onClick={onDownloadCropClick}
+                className="gap-2"
+              >
                 {isPending && (
-                  <Icons.spinner
-                    className="mr-2 h-4 w-4 animate-spin"
-                    aria-hidden="true"
-                  />
+                  <LucideIcon name="Loader" className="h-4 w-4 animate-spin" />
                 )}
                 Сохранить
               </Button>

@@ -1,5 +1,6 @@
 import React from "react"
 import Link from "next/link"
+import { type PricingPlan } from "@/(toSort)/site/constants"
 import { ArrowRightIcon, CheckIcon } from "@radix-ui/react-icons"
 
 import {
@@ -10,7 +11,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/shared/components/ui/card"
-import { type PricingPlan } from "@/shared/config/site/constants"
 import { cn } from "@/shared/lib/utils"
 
 interface PricingPlanCardProps {

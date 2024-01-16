@@ -1,4 +1,4 @@
-import { SelectTable } from "@/db/schema"
+import { SelectTable } from "@/database/schema"
 
 import { LucideIcon } from "@/shared/components/icons"
 import { Button } from "@/shared/components/ui/button"

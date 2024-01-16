@@ -1,7 +1,8 @@
 import * as React from "react"
 import Link from "next/link"
+import { footerLinks } from "@/(toSort)/site/nav"
 
-import { Icons } from "@/shared/components/icons"
+import CustomIcon from "@/shared/components/icons/custom-icon"
 import {
   Accordion,
   AccordionContent,
@@ -9,14 +10,13 @@ import {
   AccordionTrigger,
 } from "@/shared/components/ui/accordion"
 import { buttonVariants } from "@/shared/components/ui/button"
-import { footerLinks } from "@/shared/config/site/nav"
 import { cn } from "@/shared/lib/utils"
 
 import ThemeToggle from "../theme-toggle"
 
 function SiteFooter() {
   return (
-    <footer className="bg-background-100 p-6 shadow-border-t lg:p-10">
+    <footer className="border-t bg-background-100 p-6 lg:p-10">
       <nav className="mx-auto flex max-w-page flex-col">
         <DesktopFooterNav />
         <MobileFooterNav />
@@ -32,7 +32,7 @@ function DesktopFooterNav() {
         {/* Logo link */}
         <div className="flex items-center gap-3">
           <Link href="/" className="m-[-3px] p-[3px]">
-            <Icons.logo className="h-6 w-6" />
+            <CustomIcon name="Logo" className="h-6 w-6" />
           </Link>
           <p className="whitespace-nowrap text-sm font-medium text-muted-foreground">
             &copy; 2023
@@ -95,7 +95,7 @@ function DesktopFooterNav() {
               })
             )}
           >
-            <Icons.gitHub className="h-6 w-6" />
+            <CustomIcon name="GitHub" className="h-6 w-6" />
           </Link>
           {/* Button to switch themes */}
           <ThemeToggle />
@@ -112,7 +112,7 @@ function MobileFooterNav() {
         <div className="flex items-center gap-3">
           {/* Logo link */}
           <Link href="/" className="m-[-3px] p-[3px]">
-            <Icons.logo className="h-6 w-6" />
+            <CustomIcon name="Logo" className="h-6 w-6" />
           </Link>
           <p className="whitespace-nowrap text-sm font-medium text-muted-foreground">
             &copy; 2023
@@ -178,7 +178,7 @@ function MobileFooterNav() {
               })
             )}
           >
-            <Icons.gitHub className="h-6 w-6" />
+            <CustomIcon name="GitHub" className="h-6 w-6" />
           </Link>
           {/* Button to switch themes */}
           <ThemeToggle />

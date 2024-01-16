@@ -3,7 +3,7 @@ import { StaticImageData } from "next/image"
 import Link from "next/link"
 import { icons } from "lucide-react"
 
-import { Icons } from "@/shared/components/icons"
+import CustomIcon from "@/shared/components/icons/custom-icon"
 
 import createAccount from "/public/assets/preview-create-account.png"
 import customizeTable from "/public/assets/preview-customize-table.png"
@@ -149,24 +149,24 @@ export const timelineActions: TimelineAction[] = [
 
 // About
 export type AboutHighlight = {
-  icon: keyof typeof Icons
+  icon: keyof typeof icons
   title: string
   description: string
 }
 
 export const aboutHighlights: AboutHighlight[] = [
   {
-    icon: "easy",
+    icon: "Rocket",
     title: "Легко",
     description: "Создание таблиц такое же простое, как одно касание.",
   },
   {
-    icon: "globe",
+    icon: "Globe",
     title: "Доступно",
     description: "Высокая скорость сайта в любой точке мира.",
   },
   {
-    icon: "accessible",
+    icon: "Atom",
     title: "Удобно",
     description: "Комфортное использование на любом устройстве.",
   },
@@ -244,7 +244,7 @@ export const pricingPlans: PricingPlan[] = [
 ]
 
 export type PricingAddOn = {
-  icon: keyof typeof Icons
+  icon: keyof typeof icons
   title: string
   price: number
   description: string
@@ -252,25 +252,25 @@ export type PricingAddOn = {
 
 export const pricingAddOns: PricingAddOn[] = [
   {
-    icon: "check",
+    icon: "Check",
     price: 150,
     title: "Первый итем",
     description: "Описание первого итема. Можно что то сделать.",
   },
   {
-    icon: "check",
+    icon: "Check",
     price: 10,
     title: "Второй итем",
     description: "Описание второго итема. Можно что то еще.",
   },
   {
-    icon: "check",
+    icon: "Check",
     price: 50,
     title: "Третий итем",
     description: "Описание третьего итема. Можно что то ага.",
   },
   {
-    icon: "check",
+    icon: "Check",
     price: 100,
     title: "Четвертый итем",
     description: "Описание четвертого итема. Можно что то да.",
@@ -349,7 +349,7 @@ export type ContactAction = {
 
 export const contactActions: ContactAction[] = [
   {
-    icon: <Icons.logo className="h-6 w-6" />,
+    icon: <CustomIcon name="logo" className="h-6 w-6" />,
     title: "Воспользуйтесь поддержкой нашего Эксперта",
     description: (
       <>
@@ -365,7 +365,7 @@ export const contactActions: ContactAction[] = [
     ),
   },
   {
-    icon: <Icons.gitHub className="h-8 w-8" />,
+    icon: <CustomIcon name="gitHub" className="h-8 w-8" />,
     title: "Присоединяйтесь к нашему сообществу",
     description: (
       <>
@@ -380,7 +380,7 @@ export const contactActions: ContactAction[] = [
     ),
   },
   {
-    icon: <Icons.telegram className="h-6 w-6" />,
+    icon: <CustomIcon name="telegram" className="h-6 w-6" />,
     title: "Cледите за нами в Telegram",
     description: (
       <>
@@ -415,21 +415,21 @@ export const contactCommunities: ContactCommunity[] = [
 // Dashboard
 type AddNewButtonItem = {
   title: string
-  icon: keyof typeof Icons
+  icon: keyof typeof icons
 }
 
 export const addNewButtonItems: AddNewButtonItem[] = [
   {
     title: "Таблицу",
-    icon: "table",
+    icon: "Table2",
   },
   {
     title: "Хранилище",
-    icon: "storage",
+    icon: "Database",
   },
   {
     title: "Участника",
-    icon: "addUser",
+    icon: "UserPlus",
   },
 ]
 

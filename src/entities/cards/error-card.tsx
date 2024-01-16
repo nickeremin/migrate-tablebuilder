@@ -1,6 +1,7 @@
 import Link from "next/link"
+import { icons } from "lucide-react"
 
-import { Icons } from "@/shared/components/icons"
+import { LucideIcon } from "@/shared/components/icons"
 import { Button, buttonVariants } from "@/shared/components/ui/button"
 import {
   Card,
@@ -13,7 +14,7 @@ import {
 import { cn } from "@/shared/lib/utils"
 
 interface ErrorCardProps extends React.ComponentPropsWithoutRef<typeof Card> {
-  icon?: keyof typeof Icons
+  icon?: keyof typeof icons
   title: string
   description: string
   retryLink?: string
@@ -31,8 +32,6 @@ const ErrorCard = ({
   className,
   ...props
 }: ErrorCardProps) => {
-  const Icon = Icons[icon || "warning"]
-
   return (
     <Card
       as="section"
@@ -44,7 +43,7 @@ const ErrorCard = ({
     >
       <CardHeader>
         <div className="grid h-20 w-20 place-items-center rounded-full bg-muted">
-          <Icon className="h-10 w-10" aria-hidden="true" />
+          <LucideIcon name={icon || "AlertTriangle"} className="h-10 w-10" />
         </div>
       </CardHeader>
       <CardContent className="flex min-h-[176px] flex-col items-center justify-center space-y-2.5 text-center">

@@ -1,8 +1,6 @@
 import { icons } from "lucide-react"
 import { type FileWithPath } from "react-dropzone"
 
-import { Icons } from "../components/icons"
-
 // Nav types
 export interface NavItem {
   title: string

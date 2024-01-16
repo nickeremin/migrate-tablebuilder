@@ -7,21 +7,22 @@ import { useRouter } from "next/navigation"
 import { useClerk, useUser } from "@clerk/nextjs"
 
 import { SiteFooter } from "@/widgets/layout"
-import { Icons, LucideIcon } from "@/shared/components/icons"
-import { Shell } from "@/shared/components/shells/shell"
+import { LucideIcon } from "@/shared/components/icons"
+import CustomIcon from "@/shared/components/icons/custom-icon"
 import { Button } from "@/shared/components/ui/button"
 import { Separator } from "@/shared/components/ui/separator"
+import { Shell } from "@/shared/components/ui/shell"
 import { Skeleton } from "@/shared/components/ui/skeleton"
 
-const DesktopNavbar = dynamic(
-  () => import("/src/widgets/layout/navs/desktop-navbar.tsx"),
-  { ssr: false }
-)
+// const DesktopNavbar = dynamic(
+//   () => import("/src/widgets/layout/navs/desktop-navbar.tsx"),
+//   { ssr: false }
+// )
 
-const MobileNavMenu = dynamic(
-  () => import("/src/widgets/layout/navs/mobile-nav-menu.tsx"),
-  { ssr: false }
-)
+// const MobileNavMenu = dynamic(
+//   () => import("/src/widgets/layout/navs/mobile-nav-menu.tsx"),
+//   { ssr: false }
+// )
 
 function RootNotFound() {
   const { user, isLoaded } = useUser()
@@ -52,7 +53,7 @@ function RootNotFound() {
           <div className="flex flex-1 items-center pr-6">
             <div className="flex max-w-full items-center">
               <Link href="/tables">
-                <Icons.logo className="h-6 w-6" />
+                <CustomIcon name="Logo" className="h-6 w-6" />
               </Link>
               <Separator
                 orientation="vertical"
@@ -64,8 +65,8 @@ function RootNotFound() {
               ></Link>
             </div>
           </div>
-          <DesktopNavbar />
-          <MobileNavMenu />
+          {/* <DesktopNavbar />
+          <MobileNavMenu /> */}
         </Shell>
       </div>
       <main className="flex min-h-[calc(100vh-64px)] flex-col items-center justify-center pb-24 pt-12">
@@ -81,7 +82,7 @@ function RootNotFound() {
                 await signOut(() => router.push("/signin"))
               })
             }}
-            size="xl"
+            size="lg"
             className="mt-4 w-full whitespace-nowrap"
           >
             {isPending ? (

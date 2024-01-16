@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { type SelectTable } from "@/db/schema"
+import { type SelectTable } from "@/database/schema"
 import { useAuth } from "@clerk/nextjs"
 
 import { LucideIcon } from "@/shared/components/icons"

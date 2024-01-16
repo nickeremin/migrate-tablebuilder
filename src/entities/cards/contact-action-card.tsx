@@ -1,6 +1,5 @@
+import { type ContactAction } from "@/(toSort)/site/constants"
 import Balancer from "react-wrap-balancer"
-
-import { type ContactAction } from "@/shared/config/site/constants"
 
 interface ContactActionCardProps extends React.HTMLAttributes<HTMLDivElement> {
   action: ContactAction

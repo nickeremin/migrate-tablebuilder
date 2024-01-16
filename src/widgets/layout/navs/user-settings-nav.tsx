@@ -2,8 +2,8 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import { accountLinks } from "@/(toSort)/site/nav"
 
-import { accountLinks } from "@/shared/config/site/nav"
 import { cn } from "@/shared/lib/utils"
 
 function UserSettingsNav() {

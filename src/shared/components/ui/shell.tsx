@@ -3,11 +3,11 @@ import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/shared/lib/utils"
 
-const shellVariants = cva("", {
+const shellVariants = cva("mx-auto px-6", {
   variants: {
     variant: {
-      default: "max-w-full w-content-page-with-margin mx-auto px-4 lg:px-6",
-      header: "w-page-with-margin m-auto flex items-center px-6",
+      default: "max-w-full w-[--content-page-width-with-margin]",
+      header: "w-[--page-width-with-margin] my-auto flex items-center",
     },
   },
   defaultVariants: {

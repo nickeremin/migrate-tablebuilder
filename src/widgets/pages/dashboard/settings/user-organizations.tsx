@@ -18,8 +18,8 @@ import {
 import { useQuery } from "@tanstack/react-query"
 
 import { CreateOrganizationForm } from "@/features/forms"
+import { LucideIcon } from "@/shared/components/icons"
 // import { CreateTeamForm } from "@/features/forms"
-import { Icons } from "@/shared/components/icons"
 import { Avatar, AvatarImage } from "@/shared/components/ui/avatar"
 import { Button, buttonVariants } from "@/shared/components/ui/button"
 import { Card } from "@/shared/components/ui/card"
@@ -49,10 +49,7 @@ function UserOrganizations() {
       <div className="search-input-border flex h-11 items-center rounded-md bg-background-100 transition-all">
         <div className="-mr-3 flex h-full shrink-0 flex-col items-center justify-center bg-transparent px-3 text-muted-foreground">
           {false ? (
-            <Icons.spinner
-              className="h-5 w-5 animate-spin"
-              aria-hidden="true"
-            />
+            <LucideIcon name="Loader" className="animate-spin" />
           ) : (
             <MagnifyingGlassIcon className="h-5 w-5" aria-hidden="true" />
           )}

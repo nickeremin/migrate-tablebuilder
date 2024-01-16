@@ -2,7 +2,7 @@ import Link from "next/link"
 import { BellIcon } from "@radix-ui/react-icons"
 
 import { AccountSwitcher, UserNav } from "@/features/nav"
-import { Icons } from "@/shared/components/icons"
+import CustomIcon from "@/shared/components/icons/custom-icon"
 import { Badge } from "@/shared/components/ui/badge"
 import { Button } from "@/shared/components/ui/button"
 import { Separator } from "@/shared/components/ui/separator"
@@ -13,7 +13,7 @@ function DashboardHeader() {
       <div className="flex flex-1 items-center pr-6">
         <div className="flex max-w-full items-center">
           <Link href="/dashboard" className="hidden sm:block">
-            <Icons.logo className="h-6 w-6" />
+            <CustomIcon name="Logo" className="h-6 w-6" />
           </Link>
           <Separator
             orientation="vertical"

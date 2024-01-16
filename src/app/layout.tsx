@@ -7,8 +7,8 @@ import { Inter } from "next/font/google"
 import { ClerkProvider } from "@clerk/nextjs"
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
 
+import ThemeProvider from "@/shared/components/theme-provider"
 import { Toaster } from "@/shared/components/ui/toaster"
-import { ThemeProvider } from "@/shared/config/providers"
 import { cn } from "@/shared/lib/utils"
 
 import TRPCQueryProvider from "./_trpc/trpc-react-query-provider"

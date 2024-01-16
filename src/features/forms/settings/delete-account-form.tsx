@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form"
 import { toast } from "sonner"
 import * as z from "zod"
 
-import { Icons } from "@/shared/components/icons"
+import { LucideIcon } from "@/shared/components/icons"
 import { Button } from "@/shared/components/ui/button"
 import { Card, CardFooter, CardTitle } from "@/shared/components/ui/card"
 import {
@@ -146,7 +146,7 @@ function DeleteAccountrForm({
                     все другие ресурсы локально на данный компьютер.
                   </p>
                   <Spacer />
-                  <p className="flex items-center rounded-md bg-destructive/50 px-3 py-2 text-sm text-red-800 dark:text-red-200">
+                  <p className="text-red-800 dark:text-red-200 flex items-center rounded-md bg-destructive/50 px-3 py-2 text-sm">
                     Это действие необратимо. Пожалуйста, будьте уверены.
                   </p>
                   <Spacer />
@@ -220,11 +220,15 @@ function DeleteAccountrForm({
                   Отмена
                   <span className="sr-only">Отменить удаление аккаунта</span>
                 </Button>
-                <Button disabled={isPending} variant="destructive">
+                <Button
+                  disabled={isPending}
+                  variant="destructive"
+                  className="gap-2"
+                >
                   {isPending && (
-                    <Icons.spinner
-                      className="mr-2 h-4 w-4 animate-spin"
-                      aria-hidden="true"
+                    <LucideIcon
+                      name="Loader"
+                      className="h-4 w-4 animate-spin"
                     />
                   )}
                   Удалить

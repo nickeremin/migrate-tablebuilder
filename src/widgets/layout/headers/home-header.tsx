@@ -3,12 +3,11 @@
 import React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import { homeNav } from "@/(toSort)/site/nav"
 import { useUser } from "@clerk/nextjs"
 
 import { UserNav } from "@/features/nav"
-import { Icons } from "@/shared/components/icons"
-import LogoIcon from "@/shared/components/logo"
-import { Shell } from "@/shared/components/shells/shell"
+import CustomIcon from "@/shared/components/icons/custom-icon"
 import { buttonVariants } from "@/shared/components/ui/button"
 import {
   NavigationMenu,
@@ -20,10 +19,10 @@ import {
   navigationMenuTriggerStyle,
 } from "@/shared/components/ui/navigation-menu"
 import { PageHeading } from "@/shared/components/ui/page-header"
-import { homeNav } from "@/shared/config/site/nav"
+import { Shell } from "@/shared/components/ui/shell"
 import { cn } from "@/shared/lib/utils"
 
-import MobileNavMenu from "../navs/mobile-nav-menu"
+import MobileNavMenu from "../../../features/nav/mobile-nav-menu"
 
 function HomeHeader({
   className,
@@ -48,8 +47,8 @@ function HomeHeader({
     <div
       className={cn(
         "sticky top-0 z-50 flex h-16 items-center justify-center transition-shadow",
-        "bg-background shadow-nav-border lg:bg-transparent lg:shadow-none",
-        scrollPosition && "lg:!bg-background lg:!shadow-nav-border",
+        "shadow-nav-border bg-background lg:bg-transparent lg:shadow-none",
+        scrollPosition && "lg:!shadow-nav-border lg:!bg-background",
         className
       )}
       {...props}
@@ -62,7 +61,7 @@ function HomeHeader({
               href="/"
               className="flex h-9 items-center gap-2"
             >
-              <LogoIcon className="h-6 w-6" aria-hidden="true" />
+              <CustomIcon name="Logo" className="h-6 w-6" />
               <PageHeading size="logo" className="font-bold">
                 Tablebuilder
               </PageHeading>
@@ -84,7 +83,7 @@ function HomeHeader({
                             className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                             href="/"
                           >
-                            <LogoIcon className="h-6 w-6" />
+                            <CustomIcon name="Logo" className="h-6 w-6" />
                             <div className="mb-2 mt-4 text-lg font-medium">
                               Tablebuilder
                             </div>
@@ -96,7 +95,7 @@ function HomeHeader({
                         </NavigationMenuLink>
                       </li>
                       {homeNav[0]?.items?.map((item) => {
-                        const Icon = Icons[item.icon ?? "spinner"]
+                        // const Icon = Icons[item.icon ?? "spinner"]
 
                         return (
                           <li key={item.title}>
@@ -106,7 +105,7 @@ function HomeHeader({
                                 className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                               >
                                 <div className="flex items-center gap-[6px] text-sm font-medium leading-none">
-                                  <Icon className="h-4 w-4 stroke-[1.5] text-primary/80" />
+                                  {/* <Icon className="h-4 w-4 stroke-[1.5] text-primary/80" /> */}
                                   {item.title}
                                 </div>
                                 <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
